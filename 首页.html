@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <div class="head clear">
+        <div class="headlogo left">
+            <h2><a href="#">系统管理</a></h2>
+        </div>
+            <ul class="headnav left" id="headnav">
+                <li id="menu_0" class="on"><a href="#">菜单管理</a></li>
+                <li id="menu_1"><a href="#">模块管理</a></li>
+                <li id="menu_2"><a href="#">系统管理</a></li>
+                <li id="menu_3"><a href="#">扩展管理</a></li>
+            </ul>
+        <ul class="headlink">
+            <li id="link_0">
+                <a href="登录页.html">退出</a>
+            </li>
+            <li id="link_1">
+                <a href="#">帮助</a>
+            </li>
+            <li id="link_2">
+                <a href="#">首页</a>
+            </li>
+            <li id="link_3">
+                <a href="#">隐藏菜单</a>
+            </li>
+            <li id="link_4">
+                <a href="#">你好，admin</a>
+            </li>
+        </ul>
+    </div>
+    <div class="leftmenu" id="leftmenu">
+        <div id="leftmenu_0" class="leftmenu-item">
+            <dl>
+                <dt>栏目管理</dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">栏目管理</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>内容管理</dt>
+                <dd>
+                    <ul >
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">产品展示</a></li>
+                        <li><a href="#">公司相册</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt>快捷面板</dt>
+                <dd>
+                    <ul>
+                        <li><a href="#">广告管理</a></li>
+                        <li><a href="#">公告管理</a></li>
+                        <li><a href="#">友情链接</a></li>
+                        <li><a href="#">留言板管理</a></li>
+                        <li><a href="#">评论管理</a></li>
+                        <li><a href="#">清除系统缓存</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="leftmenu">
+        <div id="leftmenu_1" class="leftmenu-item" style="display: none">
+            <dl>
+                <dt>系统设置</dt>
+                <dd>
+                    <ul class="clear">
+                        <li><a href="#">网站设置</a></li>
+                        <li><a href="#">缓存设置</a></li>
+                        <li><a href="#">在线客服设置</a></li>
+                        <li><a href="#">清除系统缓存</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="leftmenu">
+        <div id="leftmenu_2" class="leftmenu-item" style="display: none">
+            <dl>
+                <dt>内容管理</dt>
+                <dd>
+                    <ul class="clear">
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">产品展示</a></li>
+                        <li><a href="#">公司相册</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="leftmenu">
+        <div id="leftmenu_3" class="leftmenu-item" style="display: none">
+            <dl>
+                <dt>内容管理</dt>
+                <dd>
+                    <ul class="clear">
+                        <li><a href="#">公司介绍</a></li>
+                        <li><a href="#">新闻中心</a></li>
+                        <li><a href="#">产品展示</a></li>
+                        <li><a href="#">公司相册</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</body>
+<script>
+    $(function(){
+        $("#headnav li").on("click",function(){
+            var _id = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $("#leftmenu").find(".leftmenu-item").eq(_id).css("display","block").siblings(".leftmenu-item").css("display","none");
+            //主导航与左侧导航关联
+        });
+        $("#link_3").click(function () {
+            if($("#leftmenu").is(":visible") == false){
+                $("#leftmenu").css("display","block");
+                $(this).children("a").text("隐藏菜单");
+            }else{
+                $("#leftmenu").css("display","none");
+                $(this).children("a").text("显示菜单");
+            }
+        });
+
+        $("#leftmenu dl dt").on("click", function () {
+           if($(this).siblings("dd").is(":visible") == false){
+               $(this).css("background-position","right 10px")
+           }else{
+               $(this).css("background-position","right -42px");
+           }
+           $(this).siblings("dd").slideToggle("fast");//.siblings("dt").css("background-position","right -42px");
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div class="login">
+        <div class="loginmain">
+            <h1>登录管理系统</h1>
+                <ul>
+                    <li>
+                        <span>管理员帐号:</span>
+                        <input type="text" name="username" value="">
+                    </li>
+                    <li>
+                        <span>管理员密码:</span>
+                        <input type="password" name="password" value="">
+                    </li>
+                    <li>
+                        <span>登录验证码:</span>
+                        <input type="text" name="yzcode" value="">
+                    </li>
+                    <li>
+                        <div class="code">
+                            <img src="img/code.png" height="40px" width="230">
+                        </div>
+                    </li>
+                    <li>
+                        <input type="button" name="loginbtn" value="登录" onclick="btn()">
+                    </li>
+                </ul>
+        </div>
+    </div>
+</body>
+<script>
+    function btn(){
+        var btn1 = document.getElementsByName("loginbtn");
+        btn1 = window.location.href= '首页.html';
+    }
+</script>
+</html>

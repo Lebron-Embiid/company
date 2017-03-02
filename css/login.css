@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "微软雅黑";
+}
+body{
+    background:#ccc;
+}
+h1{
+    text-align: center;
+    color: #0002ff;
+}
+.login{
+    width:500px;
+    height:340px;
+    background: -webkit-gradient(linear,left top,left bottom, from(#0999e9), to(#1696d7));
+    margin:0 auto;
+    margin-top:100px;
+    border-radius: 1em;
+}
+.loginmain{
+    padding:10px;
+    color:#fff;
+}
+.loginmain ul li{
+    display: block;
+    margin:20px 50px;
+}
+.loginmain ul li input[type="text"] , .loginmain ul li input[type="password"]{
+    width:250px;
+    height:30px;
+    padding:0 5px;
+}
+.loginmain ul li .code{
+    margin-left: 96px;
+    background: #1696d7;
+    cursor: pointer;
+}
+.loginmain ul li input[type="button"]{
+    width:80px;
+    height:30px;
+    border:none;
+    background: #0065a6;
+    color:#fff;
+    font-size: 14px;
+    margin-left: 100px;
+    outline:medium;
+    margin-bottom:20px;
+}
+.loginmain ul li input[type="button"]:hover{
+    background:#1696d7;
+    cursor: pointer;
+}
